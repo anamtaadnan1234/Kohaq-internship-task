@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kohaq Education</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+    --primary:#ff8c00;
+    --dark:#222;
+    --light:whitesmoke;
+}
+
+*{
+    margin:0;padding:0;box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+/* Navbar */
+nav{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:15px 5%;position:absolute;width:100%;top:0;left:0;z-index:100;
+    background:transparent;
+}
+nav h1{font-size:1.5rem;color:var(--light);}
+nav ul{display:flex;list-style:none;}
+nav ul li{margin:0 15px;}
+nav ul li a{color:var(--light);text-decoration:none;font-weight:500;}
+nav ul li a:hover{color:var(--primary);}
+.logo img {
+            width: 100px;  
+            height:100px;
+        }
+    
+/* Hero */
+.hero{
+    height:100vh;
+    background-image:url(orange.jpeg);
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    text-align:center;color:var(--light);
+    padding:0 20px;
+    position:relative;
+    background-size: cover; 
+    background-position:center;
+}
+.hero::before{
+    content:'';position:absolute;top:0;left:0;width:100%;height:100%;
+    background:rgba(0,0,0,0.5);
+}
+.hero h2{font-size:2.5rem;margin-bottom:10px;z-index:1;font-weight:700;}
+.hero p{max-width:600px;z-index:1;}
+
+/* About Us */
+#about{
+    display:flex;flex-wrap:wrap;align-items:center;gap:40px;
+    padding:60px 5%;
+    background-image: url();
+}
+.about-img{flex:1;min-width:280px;}
+.about-img img{width:100%;border-radius:5px;}
+.about-content{flex:1;min-width:280px;}
+.about-content h2{margin-bottom:20px;color:var(--dark);font-weight:700;}
+.about-content h2 span{color:var(--primary);}
+.features{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;
+}
+.feature{display:flex;align-items:flex-start;gap:15px;}
+.feature-icon{font-size:26px;color:var(--primary);min-width:30px;text-align:center;}
+.feature-text h4{color:var(--dark);margin-bottom:5px;font-weight:600;}
+`.feature-text p{font-size:0.9rem;color:#555;}
+
+/* Schedule */
+body {
+        font-family: Arial, sans-serif;
+        background-color:whitesmoke;
+        color: black;
+        padding: 20px;
+        text-align: center;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 12px;
+        text-align: center;
+    }
+    th {
+        background-color: black;
+        color: white;
+        font-weight: bold;
+    }
+    tr:nth-child(even) {
+  background-color: whitesmoke;
+    }
+
+/* Courses */
+#courses{padding:60px 5%;background:var(--light);}
+.courses-header{text-align:left;margin-bottom:20px;}
+.courses-header h3{font-size:1.4rem;color:var(--dark);font-weight:700;}
+.courses-header p{color:var(--primary);font-weight:500;margin-top:5px;}
+.carousel-container{position:relative;}
+.course-grid{display:flex;overflow-x:auto;scroll-behavior:smooth;gap:20px;padding-bottom:10px;}
+.course-card{min-width:300px;border:1px solid #ddd;border-radius:8px;padding:20px;background:#fff;text-align:center;transition:0.3s;}
+.course-card:hover{box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+.course-card h3{margin-bottom:10px;color:var(--dark);font-weight:600;}
+.course-card p{font-size:0.95rem;margin-bottom:10px;color:#555;}
+.course-card button{background:var(--primary);color:#fff;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;}
+.course-card button:hover{background:#e67e00;}
+.carousel-btn{position:absolute;top:40%;transform:translateY(-50%);background:var(--primary);color:#fff;border:none;padding:10px;cursor:pointer;border-radius:50%;}
+.carousel-btn:hover{background:#e67e00;}
+#prevBtn{left:-20px;}
+#nextBtn{right:-20px;}
+.course-card img {
+  width: 100%;              
+  height: 200px;            
+  object-fit: cover;        
+  border-radius: 10px;      
+  display: block;    
+}       
+/* Modal */
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);justify-content:center;align-items:center;z-index:1000;}
+.modal-content{background:#fff;padding:20px;border-radius:8px;width:90%;max-width:500px;max-height:90%;overflow:auto;}
+.modal-content h3{margin-bottom:15px;color:var(--dark);}
+.close{float:right;cursor:pointer;color:#333;font-weight:bold;}
+form label{display:block;margin-top:10px;margin-bottom:4px;font-weight:500;}
+form input,form select,form textarea{width:100%;padding:8px;border:1px solid #ccc;border-radius:5px;margin-bottom:10px;}
+
+/* Contact */
+#contact{background:var(--light);padding:50px 5%;}
+.contact-wrapper{max-width:600px;margin:auto;}
+.contact-form label{display:block;margin-top:10px;margin-bottom:4px;font-weight:500;color:var(--dark);}
+.contact-form input,.contact-form select,.contact-form textarea{width:100%;padding:8px;border:1px solid #ccc;border-radius:5px;margin-bottom:15px;}
+.submit-btn{text-align:right;}
+.submit-btn button{background:var(--primary);color:#fff;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;}
+.submit-btn button:hover{background:#e67e00;}
+
+/* Footer */
+footer{background:#111;color:#fff;padding:40px 5%;}
+.footer-container{display:flex;flex-wrap:wrap;justify-content:space-between;gap:40px;}
+.footer-left{flex:1;min-width:250px;}
+.footer-left img{width:40px;height:40px;vertical-align:middle;margin-right:10px;}
+.footer-left h3{display:flex;align-items:center;font-weight:700;margin-bottom:10px;}
+.footer-left p{color:#ccc;line-height:1.5;}
+.footer-right{flex:1;min-width:250px;}
+.footer-right h3{margin-bottom:5px;font-weight:700;}
+.footer-right p{color:#ccc;margin-bottom:15px;}
+.footer-right a{display:block;color:#ccc;margin-bottom:8px;text-decoration:none;}
+.footer-right a i{margin-right:8px;color:var(--primary);}
+.copyright{text-align:center;margin-top:30px;color:#aaa;font-size:0.9rem;}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+      <div class="logo">
+                <img src="kohaq-logo.jpg" alt="kohaq"> 
+            </div>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Hero -->
+<div id="home" class="hero">
+    <h2>Empowering Your Skills, for the Future</h2>
+    <p>Your pathway to knowledge and career growth.</p>
+</div>
+
+<!-- About Us -->
+<section id="about">
+    <div class="about-img">
+        <img src="about-us.jpg" alt="Students">
+    </div>
+    <div class="about-content">
+        <h2>WHY <span>CHOOSE</span> US ?</h2>
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon"><i class="fas fa-book-open"></i></div>
+                <div class="feature-text">
+                    <h4>Popular Courses</h4>
+                    <p>Learn in-demand skills to advance your career.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon"><i class="fas fa-book"></i></div>
+                <div class="feature-text">
+                    <h4>Modern Book Library</h4>
+                    <p>Access updated learning resources anytime.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                <div class="feature-text">
+                    <h4>Qualified Teachers</h4>
+                    <p>Learn from experienced and certified instructors.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon"><i class="fas fa-bell"></i></div>
+                <div class="feature-text">
+                    <h4>Update Notification</h4>
+                    <p>Stay informed with class updates and news.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon"><i class="fas fa-gamepad"></i></div>
+                <div class="feature-text">
+                    <h4>Entertainment Facilities</h4>
+                    <p>Enjoy a fun and engaging learning environment.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                <div class="feature-text">
+                    <h4>24/7 Online Support</h4>
+                    <p>We are always here to help you anytime.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Schedule -->
+<h2>Class Schedule</h2>
+
+<table>
+    <tr>
+        <th>Day</th>
+        <th>Time</th>
+        <th>Course</th>
+    </tr>
+    <tr>
+        <td rowspan="3">Monday - Friday</td>
+        <td>5:00 PM - 7:00 PM</td>
+        <td>Front End Development (Web)</td>
+    </tr>
+    <tr>
+        <td>7:30 PM - 9:30 PM</td>
+        <td>Shopify</td>
+    </tr>
+    <tr>
+        <td>10:00 PM - 11:00 PM</td>
+        <td>Digital Marketing</td>
+    </tr>
+    <tr>
+        <td rowspan="3">Saturday</td>
+        <td>3:00 PM - 5:00 PM</td>
+        <td>Amazon</td>
+    </tr>
+    <tr>
+        <td>5:30 PM - 7:30 PM</td>
+        <td>Data Science</td>
+    </tr>
+    <tr>
+        <td>8:00 PM - 9:00 PM</td>
+        <td>Cyber Security</td>
+    </tr>
+</table>
+
+
+<!-- Courses -->
+<section id="courses">
+    <div class="courses-header">
+        <h3>Popular Courses</h3>
+        <p>Choose Your Course</p>
+    </div>
+    <div class="carousel-container">
+        <button id="prevBtn" class="carousel-btn"><i class="fas fa-chevron-left"></i></button>
+        <div class="course-grid" id="courseGrid">
+            <div class="course-card"> <img src="front end development.jpeg" alt="front end development"><h3>Front End Development</h3><p>Build responsive websites. Price: $200</p><button onclick="openModal('Front End Development')">Register</button></div>
+            <div class="course-card"><img src="shopify.jpeg" alt="shopify"><h3>Shopify</h3><p>Master eCommerce with Shopify. Price: $180</p><button onclick="openModal('Shopify')">Register</button></div>
+            <div class="course-card"><img src="amazon.jpeg" alt="amazon"><h3>Amazon</h3><p>Learn to sell on Amazon. Price: $220</p><button onclick="openModal('Amazon')">Register</button></div>
+            <div class="course-card"><img src="digital-marketing.jpeg" alt="digital marketing"><h3>Digital Marketing</h3><p>Grow brands online. Price: $190</p><button onclick="openModal('Digital Marketing')">Register</button></div>
+            <div class="course-card"><img src="data-science.jpeg" alt="data-science"><h3>Data Science</h3><p>Analyze and visualize data. Price: $250</p><button onclick="openModal('Data Science')">Register</button></div>
+            <div class="course-card"><img src="cyber-security.jpeg" alt="cyber-security"><h3>Cyber Security</h3><p>Protect systems from threats. Price: $210</p><button onclick="openModal('Cyber Security')">Register</button></div>
+        </div>
+        <button id="nextBtn" class="carousel-btn"><i class="fas fa-chevron-right"></i></button>
+    </div>
+</section>
+
+<!-- Registration Modal -->
+<div id="regModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3>Register for <span id="courseName"></span></h3>
+<form action="https://formspree.io/f/xrblyvlo" method="POST"
+>
+            <label>Full Name</label><input type="text" name="Full Name" required>
+            <label>Date of Birth</label><input type="date" name="Date of Birth" required>
+            <label>Gender</label><select name="Gender" required><option>Male</option><option>Female</option></select>
+            <label>Nationality</label><input type="text" name="Nationality" required>
+            <label>Email</label><input type="email" name="Email" required>
+            <label>Phone/WhatsApp</label><input type="tel" name="Phone" required>
+            <label>Highest Qualification</label><input type="text" name="Qualification" required>
+            <label>Current Profession</label><input type="text" name="Profession" required>
+            <label>Course Name</label><select name="Course" required>
+                <option>Front End Development</option><option>Shopify</option><option>Amazon</option>
+                <option>Digital Marketing</option><option>Data Science</option><option>Cyber Security</option>
+            </select>
+            <label>Learning Goals</label><textarea name="Learning Goals"></textarea>
+            <label>Payment Method</label><select name="Payment Method" required>
+                <option>Bank Transfer</option><option>Easypaisa</option><option>JazzCash</option>
+                <option>Credit Card</option><option>PayPal</option>
+            </select>
+            <label>Screenshot Upload</label><input type="file" name="Payment Screenshot" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+<!-- Contact -->
+<section id="contact">
+    <div class="contact-wrapper">
+        <form class="contact-form">
+            <label>First Name</label>
+            <input type="text" name="First Name" required>
+            <label>Last Name</label>
+            <input type="text" name="Last Name" required>
+            <label>Email</label>
+            <input type="email" name="Email" required>
+            <label>Contact Number</label>
+            <input type="tel" name="Contact Number" required>
+            <label>Course Name</label>
+            <select name="Course" required>
+                <option>Front End Development</option>
+                <option>Shopify</option>
+                <option>Amazon</option>
+                <option>Digital Marketing</option>
+                <option>Data Science</option>
+                <option>Cyber Security</option>
+            </select>
+            <label>Describe Your Problem</label>
+            <textarea name="Problem" rows="4"></textarea>
+            <div class="submit-btn">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-left">
+            <h3><img src="kohaq-logo.jpg" alt="Logo">Kohaq Education</h3>
+            <p>Kohaq Education is a leading online platform dedicated to empowering learners with practical and in-demand skills. We believe in providing accessible, high-quality courses led by experienced professionals. Our goal is to equip you with the tools and knowledge necessary to succeed in your career. Whether you're starting from scratch or upgrading your skills, our courses are designed to meet your needs. Join a community of motivated learners and unlock your potential. Education is the key, and we are here to hand it to you.</p>
+        </div>
+        <div class="footer-right">
+            <h3>Contact</h3>
+            <p>Reach out anytime, we are always here</p>
+            <a href="#"><i class="fas fa-envelope"></i>kohaqedu@gmail.com</a>
+            <a href="#"><i class="fab fa-instagram"></i>@kohaqeducation</a>
+            <a href="#"><i class="fas fa-phone"></i>+123-456-7890</a>
+            <a href="#"><i class="fas fa-globe"></i>www.kohaqedu.com</a>
+        </div>
+    </div>
+    <div class="copyright">
+        &copy; 2025 KohaqEdu.com | All Rights Reserved
+    </div>
+</footer>
+
+<script>
+function openModal(course){
+    document.getElementById('courseName').innerText = course;
+    document.getElementById('regModal').style.display = 'flex';
+}
+function closeModal(){
+    document.getElementById('regModal').style.display = 'none';
+}
+window.onclick = function(e){
+    if(e.target == document.getElementById('regModal')){
+        closeModal();
+    }
+}
+const courseGrid = document.getElementById('courseGrid');
+document.getElementById('prevBtn').addEventListener('click', ()=>{courseGrid.scrollBy({left:-320,behavior:'smooth'});});
+document.getElementById('nextBtn').addEventListener('click', ()=>{courseGrid.scrollBy({left:320,behavior:'smooth'});});
+</script>
+</body>
+</html>
